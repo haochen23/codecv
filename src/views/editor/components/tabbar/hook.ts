@@ -1,13 +1,13 @@
 import { getLocalStorage, removeLocalStorage, setLocalStorage } from '@/common/localstorage'
-import { createStyle, query, removeHeadStyle, convert, createDIV } from '@/utils'
+import { warningMessage } from '@/common/message'
 import {
   getFontFamily,
   getLineHeight,
   getPrimaryBGColor,
   getPrimaryColor
 } from '@/templates/config'
+import { convert, createDIV, createStyle, query, removeHeadStyle } from '@/utils'
 import { onActivated, onMounted, reactive, ref } from 'vue'
-import { warningMessage } from '@/common/message'
 
 const get = getLocalStorage,
   set = setLocalStorage
@@ -169,6 +169,30 @@ export function useCustomFont(resumeType: string) {
     {
       value: 'Nunito',
       label: 'Nunito(英文)'
+    },
+    {
+      value: '"Times New Roman"',
+      label: 'Times New Roman'
+    },
+    {
+      value: 'Arial',
+      label: 'Arial'
+    },
+    {
+      value: 'Georgia',
+      label: 'Georgia'
+    },
+    {
+      value: 'Calibri',
+      label: 'Calibri'
+    },
+    {
+      value: 'Helvetica',
+      label: 'Helvetica'
+    },
+    {
+      value: 'Garamond',
+      label: 'Garamond'
     }
   ]
   const font = ref(
